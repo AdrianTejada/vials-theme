@@ -31,11 +31,17 @@ poster="https:{{ block.settings.video_image | img_url: 'master' }}">
   {% for product in collection.products %}
 
   <div class="videoBoxInfo">
-
-    <h1>
-    	{{product.title}}
-    </h1>
-
+    
+    {% render 'card-product',
+      card_product: product,
+      media_aspect_ratio: section.settings.image_ratio,
+      show_secondary_image: section.settings.show_secondary_image,
+      show_vendor: section.settings.show_vendor,
+      show_rating: section.settings.show_rating,
+      lazy_load: lazy_load,
+      show_quick_add: section.settings.enable_quick_add,
+      section_id: section.id
+%}
 
     {%- style -%}
       .videoBackground .imageBoxInfoDescription p {
@@ -43,16 +49,6 @@ poster="https:{{ block.settings.video_image | img_url: 'master' }}">
       }
     {%- endstyle -%}
 
-
-    {% for media in product.media %}
-		<img src="{{ media | img_url: '200x'}}"/>
-    {% endfor %}
-<!--   PUT ADD TO CART BUTTON HERE   -->
-    <form method="post" action="/cart/add">
-      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-      <input min="1" type="number" id="quantity" name="quantity" value="1"/>
-      <input type="submit" value="Add to cart" class="btn" />
-	</form>
 
 
   </div>
