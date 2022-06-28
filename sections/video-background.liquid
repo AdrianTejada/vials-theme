@@ -74,7 +74,7 @@ poster="https:{{ block.settings.video_image | img_url: 'master' }}">
       show_vendor: section.settings.show_vendor,
       show_rating: section.settings.show_rating,
       lazy_load: false,
-      show_quick_add: section.settings.enable_quick_add,
+      show_quick_add: quick_add,
       section_id: section.id
       %}
   {% endfor %}
