@@ -63,9 +63,6 @@ poster="https:{{ block.settings.video_image | img_url: 'master' }}">
       	color: {{ block.settings.color_text }}!important;
       }
     {%- endstyle -%}
-
-
-
       {% render 'card-product',
       card_product: product,
       media_aspect_ratio: section.settings.image_ratio,
