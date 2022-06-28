@@ -58,11 +58,6 @@ poster="https:{{ block.settings.video_image | img_url: 'master' }}">
   {% for product in collection.products %}
 
 
-    <h1>
-    	{{product.title}}
-    </h1>
-
-
     {%- style -%}
       .videoBackground .imageBoxInfoDescription p {
       	color: {{ block.settings.color_text }}!important;
@@ -70,11 +65,7 @@ poster="https:{{ block.settings.video_image | img_url: 'master' }}">
     {%- endstyle -%}
 
 
-    {% for media in product.media %}
-		<img src="{{ media | img_url: '200x'}}"/>
-    {% endfor %}
 
-    <div class="grid__item">
       {% render 'card-product',
       card_product: product,
       media_aspect_ratio: section.settings.image_ratio,
@@ -85,10 +76,8 @@ poster="https:{{ block.settings.video_image | img_url: 'master' }}">
       show_quick_add: section.settings.enable_quick_add,
       section_id: section.id
       %}
-    </div>
   {% endfor %}
-      </div>
-
+    </div>
 </div>
 
 {% else %}
