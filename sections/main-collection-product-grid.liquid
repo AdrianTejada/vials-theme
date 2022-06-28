@@ -5,7 +5,7 @@
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-{% assign quick_add = false %}
+{% assign quick_add = true %}
 
 {%- if quick_add -%}
   <link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
