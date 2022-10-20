@@ -166,8 +166,9 @@
 
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
 
-
+            {% comment %}
             {% render 'price', product: card_product, price_class: '' %}
+            {% endcomment %}
           </div>
         </div>
        
@@ -213,7 +214,9 @@
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
+            {% comment %}
             {% render 'price' %}
+            {% endcomment %}
           </div>
         </div>
       </div>
