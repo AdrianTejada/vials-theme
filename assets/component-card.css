@@ -18,7 +18,14 @@
 
 .card--card {
   height: 100%;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
 }
+/* 
+@media only screen and (max-width: ) {
+  
+} */
 
 .card--card,
 .card--standard .card__inner {
